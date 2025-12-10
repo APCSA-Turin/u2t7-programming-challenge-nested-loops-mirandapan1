@@ -17,7 +17,20 @@ return the string below for given height=5
 *****  
            */
 public static String starStaircase(int height){
-    return "";
+    String result = "";
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j <= i; j++) {
+            result += "*";
+        }
+        if (!(i == height - 1)) {
+            result += "\n";
+        }
+        
+        
+    }
+    
+return result;
+    
 }
           /*
 return the string below for given height=5
@@ -29,8 +42,18 @@ return the string below for given height=5
            */
 
 public static String starStaircaseReverse(int height){
-    return "";
+    String result = "";
+    for (int i = 0; i < height; i++) {
+        for (int j = height; j > i; j--) {
+            result += "*";        
+        }
+        if (!(i == height - 1)) {
+            result += "\n";
+        }
+    }
+    return result;
 }
+
             /*
 
 width=5 height=5
@@ -41,7 +64,27 @@ width=5 height=5
 *****
           */
     public static String emptyBox(int width, int height) {
-        return "";
+        String result = "";
+        if (!(height < 2 || width < 2)) {
+                for (int i = 0; i < width; i++) {
+                result += "*";        
+            }
+            result += "\n";
+            for(int i = 0; i < height - 2; i++) {
+                result += "*";
+                for (int j = 0; j < width - 2; j++) {
+                    result += " ";
+                }
+                result += "*\n";
+            }        
+
+            for (int k = 0; k < width; k++) {
+                result += "*";        
+            }
+            
+        }
+        return result;
+        
     }
                     /*
 return the string below for word="HELLO" rows=5                    
@@ -54,7 +97,19 @@ OHELL
   i will provide a hint for this one if you get stuck.. use modulo
                 */
     public static String repeatRectangle(String word, int rows){
-        return "";
+        String result = "";
+        for (int i=0; i<rows;i++) {
+            for (int j = 0; j < word.length(); j++) {
+               int newIndex = (i+j)%word.length();
+               result += word.substring(newIndex, newIndex+1);
+            }
+            if (!(i == rows - 1)) {
+            result += "\n";
+            }
+          
+        }
+        
+        return result;
     }
 
 }
